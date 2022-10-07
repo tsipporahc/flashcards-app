@@ -5,14 +5,15 @@ const app = express(); // returns express app
 app.set('view engine', 'pug');
 
 app.get('/', (req, res) => {
-    res.send('<h1>I love you<h1>');
+    res.render('index');
 
 }); // root route
 
-app.get('/hello', (req, res) => {
-    res.send('<h1>Hello YOU!!<h1>');
 
-});
+app.get('/cards', (req, res) => {
+    res.render('cards', {prompt: 'Who love you?', hint: 'the person that created this app'});
+
+}); //cards route
 
 
 //set up developer server using the listen method
