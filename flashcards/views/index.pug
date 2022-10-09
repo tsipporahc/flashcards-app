@@ -1,11 +1,8 @@
-doctype html
-html(lang="en")
-  head
-    title Flashcards
-  body
-    header
-      h1 Flashcards
-    section#content
-      h2 Welcome, student!
-    footer
-      p “Young girls often feel strong, courageous, highly creative, and powerful until they begin to receive undermining sexist messages that encourage them to conform to conventional notions of femininity. To conform they have to give up power.”
+extends layout.pug
+
+block content
+  section#content  
+    h2 Welcome, #{name}!
+    form(action='/goodbye', method='post')
+      button(type="submit") Goodbye
+    
