@@ -3,6 +3,7 @@ extend layout.pug
 block content
     section#content
       h2= text
-      p
-        i Hint: #{hint}
+      if hint
+        p
+          i Hint: #{hint}
       a(href=`${id}?side=${side}`) #{sideText}  
