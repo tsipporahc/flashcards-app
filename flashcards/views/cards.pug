@@ -2,11 +2,7 @@ extend layout.pug
 
 block content
     section#content
-      h2= prompt
+      h2= text
       p
         i Hint: #{hint}
-    if hint2
-      p
-        i Hint2: #{hint2}
-    else 
-      p Hint2: no hint, second hint sorry.     
+      a(href=`${id}?side=${side}`) #{sideText}  
