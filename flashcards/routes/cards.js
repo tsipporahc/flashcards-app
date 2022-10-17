@@ -7,8 +7,7 @@ router.get('/', (req, res) => {
     const numberofCards = cards.length;
     const randomId = Math.floor(Math.random() * numberofCards);
     res.redirect(`/cards/${randomId}?side=question`);
-})
-
+});
 
 router.get('/:id', (req, res) => {
     const { id } = req.params;
@@ -24,15 +23,14 @@ router.get('/:id', (req, res) => {
 
     if (side === 'question') {
         templateData.hint = hint;
-        templateData.side = 'answer';
+        templateData.sideToFlip = 'answer';
         templateData.sideText = 'Answer';
     } else if (side === 'answer') {
-        templateData.side = 'question';
+        templateData.sideToFlip = 'question';
         templateData.sideText = 'Question';
     }
 
     res.render('cards', templateData);
-
 }); //cards route
 
 module.exports = router;
